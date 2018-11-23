@@ -1,0 +1,21 @@
+---
+title: "Reproducibility of Social Psychology"
+author: "Jordan Mark Barbone, B.A."
+output: word_document
+bibliography: references.bib
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+devtools::install_github("crsh/papaja")
+```
+
+## Introduction
+
+## Part I
+
+## Part II
+
+## Part III
+
+## References

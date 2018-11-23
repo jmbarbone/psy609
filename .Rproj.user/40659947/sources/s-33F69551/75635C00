@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1542648687410.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "75635C00",
+    "lastKnownWriteTime" : 1542949664,
+    "last_content_update" : 1542949664493,
+    "path" : "~/GitHub/PSY609/final_paper_apa.Rmd",
+    "project_path" : "final_paper_apa.Rmd",
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "86,0",
+        "scrollLine" : "78",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

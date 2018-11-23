@@ -1,0 +1,39 @@
+@article{open2012open,
+  title={An open, large-scale, collaborative effort to estimate the reproducibility of psychological science},
+  author={Open Science Collaboration},
+  journal={Perspectives on Psychological Science},
+  volume={7},
+  number={6},
+  pages={657--660},
+  year={2012},
+  publisher={Sage Publications Sage CA: Los Angeles, CA}
+}
+
+@article{open2015estimating,
+  title={Estimating the reproducibility of psychological science},
+  author={Open Science Collaboration and others},
+  journal={Science},
+  volume={349},
+  number={6251},
+  pages={aac4716},
+  year={2015},
+  publisher={American Association for the Advancement of Science}
+}
+
+@article{klein2014investigating,
+  title={Investigating variation in replicability},
+  author={Klein, Richard A and Ratliff, Kate A and Vianello, Michelangelo and Adams Jr, Reginald B and Bahn{\'\i}k, {\v{S}}t{\v{e}}p{\'a}n and Bernstein, Michael J and Bocian, Konrad and Brandt, Mark J and Brooks, Beach and Brumbaugh, Claudia Chloe and others},
+  journal={Social Psychology},
+  year={2014},
+  publisher={Hogrefe Publishing}
+}
+
+@article{earp2015replication,
+  title={Replication, falsification, and the crisis of confidence in social psychology},
+  author={Earp, Brian D and Trafimow, David},
+  journal={Frontiers in Psychology},
+  volume={6},
+  pages={621},
+  year={2015},
+  publisher={Frontiers}
+}

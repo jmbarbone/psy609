@@ -1,0 +1,11 @@
+.large { font-size: 130% }
+.larger { font-size: 160% }
+.small { font-size: 70% }
+.double {font-size: 200% }
+.super { font-size: 250% }
+.super-duper { font-size: 500% }
+pre {
+  background: #FFBB33;
+  max-height: 100%;
+  overflow-y: scroll;
+}

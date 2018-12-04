@@ -42,14 +42,31 @@ mask              : no
 draft             : no
 documentclass     : "apa6"
 classoption       : "man"
-#output            : papaja::apa6_pdf
+# output            : papaja::apa6_pdf
 output            : papaja::apa6_docx
 editor_options: 
   chunk_output_type: console
 ---
 
 ```{r setup, include = FALSE}
+# devtools::install_github("crsh/papaja@devel")
 library("papaja")
+
+# Some limitations with outputting to MS Word:
+# 
+# Always add a header line with running head and page number
+#
+# If necessary,
+# 
+# - position author note at the bottom of page 1
+# - move figures and tables to the end of the manuscript
+# - add colon to level 3-headings
+# - in figure captions,
+# - add a colon following the figure numbers and italicize (e.g. “Figure 1. This is a caption.”)
+# 
+# in tables,
+# - add horizontal rules above the first and below the last row
+# - add midrules
 ```
 
 ```{r analysis-preferences}
@@ -58,34 +75,67 @@ set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
-This is the introcuction to my paper.  it is very well written.  So here's a citation [@open2012open] or something and [@open2015estimating].  Oh, here's another reference [@klein2014investigating] and this ought to be important.
+In the 17th century Robert Boyle reported success in observing anomalous suspension of water with his sophisticated air pump was put to question.  These findings were difficult to replicate due to the instruments complexity and expence.  Another scientistChristiaan Huygens was able to demonstrate a similiar effect with his own air pump but was met with the same reaction.  Thus a debate over validating claims and differentiating between "thought experiments" and actual experiments was birthed.  The Royal Society was not satisfied until in 1663 when Huygens was invited to England and was able to successfully replicate this phenomenon [@shapin1984pump].
 
-# Methods
-We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
+What came from this skeptic event was a growing sense of the necessity of replicability and establishing facts that could be observed by others.  Today, to publish in well-respected journals, researchers must describe the methods of their study or experiment well-enough for the reader to be able to successfully implement the same methodologies to come to similar conclusions.  Yet, these might only be read and criticized without following through with tests.  In this way, the review of an article more akin to the thought experiments Boyle discussed than to the effort of replicating the events.
 
-## Participants
+One estimate places the rate of replication in scientific journals at --text-- of publications.  
 
-No participants were used here.  This is a literature review.
+# What is the "replication crisis"?
 
-## Material
+Pashler and Harris [-@pashler2012replicability] examined three arguments concerning the magnitude of the replication crisis.  The first argument centers around the standard 5% likelihood of acceptive a false null hypothesis and 80% likelihood of rejecting a false null hypothesis.  These may seem like safe thresholds but the false positive rate is higher than at first glance.  We can calculate the probability that a positive result is false ($\alpha^1$) by dividing the proportion of false positives ($P_\alpha$) by the sum of the proportion of false positives and the proportion of correct rejections ($P_\beta$); i.e., $\alpha^1 = \frac{P_\alpha}{P_\alpha + P_\beta}$.
+  
+With an assumption that the prior probabilyt of a true effect is 10%, and given an \alpha level of .05, $P_\alpha = .05 * (1 - 10) = .045$.  Given a power level of .80, we would find that $\alpha^1 = .045 / (.045 *s .80) = .36$.  A rate of .36 for false positives findings, given these criteria, should raise more concern
 
-Well, yeah no.
+In his brazenly titled article, "Why most published research findings are false", Ioannidis [-@ioannidis2005why] provides a more expansive review of the probability of false positive articles.  His formualae include variations for researcher bias and number of teams involved.  Using his methods, Iaonnidis identifies six correllaries to estimated false positive rates: studies with smaller sizes; studies with smaller effect sizes; the greater number of tests and less pre-selection of tests in a study; the greater the design or methodology flexibility; the greater the financial or interest in publishing the finding; and the more teams involved in a particular area.  His last correllary seems at first counterintuitive without explanation.  Ioannidis proposes that the "hotter" the area of research the more pressure researchers have to disseminate their "impressive" findings.  Ioannidis comes to the conclusion that, given all these factors, more the majority of research -- across all fields -- are likely to be false findings.
 
-## Procedure
+The second argument Pashelr and Harris [-@pashler2012replicability] tackle is suggestiong that despite a lack of direct replication, conceptual relications are more frequent and test not just the validity of the original research but the generability, too. The authors echo concerns from Ioannidis [-@ioannidis2005why] that published conceptual replications represent "interesting" findings that publications favor.  The rate of published replication in psychology is estimated at 1.07% of publications; direct replications constituting only 14% of these [@makel2012replications].  The publication rate for failed direct replications is nearly twice that of failed conceptual replications (14.6% and 7.5%, respectively).  
 
-I searched GoogeScholar.
+## False positive-psychology
 
-## Data analysis
 
-None.
 
-# Results
+## Estimating the reproducibility...
 
-We're going to have a Conclusions section I believe.
+The Open Science Collaboration (OSC) of the Center for Open Science (COS) set out on an endeavor to promote the interest in replication studies and set standards for replications [@osc2012open].  The OSC selected 100 contemporary studies across three journals in psychology and and reported the results of their replications.  Of these 100, 93 were originally reported with significant findings[^1], but only 36 of the replication findings reached the same conclusion.  When separting by discipline, the rate of success for cognitive experiences was greater than social (21/42 and 14/55, respectively[^2])  Possibly coincidentally, this is concordant with the rough estimate that 36% of positive findings in research are false [@pashler2012replicability; @ioannidis2005why].  Original studies that reported greater effect sizes and more significant findings were more likely to be replicated than those with smaller effects and less significance.  
 
-# Discussion
+[^1]: Significant effects here being defing by a reported *p* of less than .05.
 
-See above.
+[^2]: This reported only on the 97 original articles with reported significance and reported on the those with p < .05 in the original direction.
+
+The COS has made clear possible issues with their findings.  They acknowledge that there is no single standard for determining the success of a replication and thus report on several measures that may be taken into account [@open2012open; @open2015estimating].  Their selection of articles was not entirely random either, and they acknowledge that there are inherently greater challenges in replicating some psychological research that may rely on a specific population or dependent on an historical event.
+
+# Why replications don't occur
+
+## Why is this even a crisis?
+
+Publishers tend to value in experiments and studies over replications.  Confirmatory replications may not caught the attention of a journal because '*we already know that*'.  Face value, repeated someone else's work does not seem to contribute much to the scientific field.  Yet, replicable "serves as a kind of demarcation criterion between science and non-science" [@braude2002esp, p. 33].  Science is science because it is replicable.  
+
+## Data quality and ethics
+
+No one is possibly more infamous for fabricating data than Andrew Wakefield.  This well known example of a researcher fabricating data related to autism spectrum distorder and the MRR vaccine. Yet, incidences like these may be more frequent but more benign. 
+
+# Case studies
+
+## Roasting the "Marshmallow test"
+
+In the mid 1960's, Walter Mischel and 
+
+## Violence in video-games
+
+There exists a contentious battle between researchers in the field of media whether or not violent media -- specifically video games -- contributes to violent acts by individuals.  
+
+A meta-analysis [@anderson2001effects] of violent videogames concluded that violent videogames increase aggression, physiological arousal, and aggression-releated thoughts and feelings -- with small but positive lationships.  Yet, years later, another meta-analysis [@ferguson2007good] found that videogames were not linked to aggression after controlling for publication bias.  This second meta-analysis also reported on improvement on visuospatial cognition.  Here, too, there was an issue with publication bias -- but even when adjusting for this, the improvement effect was still significant.
+
+Now, with conflicting meta-analyses, researchers may be stuck _inter canem et lupum_ when reasoning out how to interpret these findings.  There also exists another bias from either side: the first publication was presented by Brad Bushman and Craig Anderson -- two reserachers known for their findings on the influence of violent media on violent behaviors and attitudes.  The second was published by Christopher John Ferguson, a researcher who quite frequently challenges these views.  
+
+# Concluding remarks
+
+In oppositional contrast to the equating of social sciences as "soft sciences" Sanjay Srivastava at the University of Oregon likes to refer to Psychology as the "hardest science" has put together a semi-satirical class syllabus on Psychology research methods titled "Everything is F\*\*\*\*ed" [@srivastava2018everything].  Here Dr. Srivastava has curated a selection of articles to highlight shortcomings in psychological research that range from uninterpretable results, failures to replicate, and poor statistical analyses.  Yet he still offers hope the everything is okay.  Direct replication is an issue in psychology - especially in the social realm, but that that does not mean that all past work is questionable.  As mentioned earlier, *indirect* and *conceptual* replications occur often.  For now, these will have to do to demonstrate that phenomonon of past research is sound and replicable.
+
+We should leave with a few notes of caution and tips.  Research reproduced outside the original laboratory or collaborators aids more in demonstrating reproducibiliy than continuous articles from the same institution.  Failure to replicate does not mean that the original effect is invalid.  As the COS has suggested, the issue may even be with the attempt the replicate and methodological differences that were overlooked or unnoticed.  There may exists some concepts and theories that are downright wrong and invalid but shotty research continues to push these to publishers.  In the other sense, a good idea may have gone unnoticed because the first experiment was not successful.  But we ought not to disqualify any large portion of psychology simply because we have some concerns about reproducibility.  Early findings have been a little grim, but these have tended towards testing recent research rather than anything foundational.
+
+Not matter the results, reproducibility, openness, and transparancy will continue to grow from these expeditions.  Already the ability to directly share research is made easy with online storage and sharing.  Journals are requiring data in order to publish -- some even with requirements that data must be publically available [@jhl2018academic].  Often it may seem, when reading the interpreations of researcher's work, that hypotheses are strongly confirmed when the data suggest a weaker magnitude with more exceptions.
 
 \newpage
 

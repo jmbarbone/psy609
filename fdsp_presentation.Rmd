@@ -2,7 +2,7 @@
 title: "Replication in Social Psychology"
 subtitle:  "Overview and two case studies"
 author: "Jordan Mark Barbone"
-date: "`r Sys.Date()`"
+date: "5 December 2018"
 output:
   xaringan::moon_reader:
     lib_dir: libs

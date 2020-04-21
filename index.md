@@ -1,4 +1,3 @@
-## CSS styles
 <style>
 .resp-container {
     position: relative;
@@ -16,8 +15,6 @@
 }
 </style>
 
-
-## html iframe to embed the slide.
 
 <div class="resp-container">
     <iframe class="testiframe" src="https://jmbarbone.github.io/psy609/fdsp_presentation.html">

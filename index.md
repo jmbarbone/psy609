@@ -20,7 +20,7 @@
 ## html iframe to embed the slide.
 
 <div class="resp-container">
-    <iframe class="testiframe" src="https://jmbarbone.github.io/psy609/gh-pages.html">
+    <iframe class="testiframe" src="https://jmbarbone.github.io/psy609/fdsp_presentation.html">
       Fallback text here for unsupporting browsers, of which there are scant few.
     </iframe>
 </div>
